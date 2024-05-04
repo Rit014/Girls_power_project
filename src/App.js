@@ -68,18 +68,13 @@ function App() {
         if (e.target.value === "") {
             setUsers(searchData)
         } else {
-            const filterResult = searchData.filter(item => item.name.toLowerCase().includes(e.target.value.toLowerCase()) || item.id.toLowerCase().includes(e.target.value.toLowerCase()) || item.rank.toLowerCase().includes(e.target.value.toLowerCase()) || item.price_usd.toLowerCase().includes(e.target.value.toLowerCase()) || item.percent_change_24h.toLowerCase().includes(e.target.value.toLowerCase()) || item.price_btc.toLowerCase().includes(e.target.value.toLowerCase()) || item.market_cap_usd.toLowerCase().includes(e.target.value.toLowerCase()));
+            const filterResult = searchData.filter(item => item.name.toLowerCase().includes(e.target.value.toLowerCase()) || item.id.toLowerCase().includes(e.target.value.toLowerCase()));
             if (filterResult.length > 0) {
                 setUsers(filterResult)
             } else {
                 setUsers([{ 
                     "id": "No Data Found", 
                     "name": "no Data found",
-                    "rank": "no Data found",
-                    "price_usd": "no Data found",
-                    "percent_change_24h": "no Data found",
-                    "price_btc": "no Data found",
-                    "market_cap_usd": "no Data found"
                 }]);
             }
         }
